@@ -1,4 +1,5 @@
 require "sentinelli/version"
+require 'rest-client'
 
 
   class SentinelliReport
