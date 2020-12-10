@@ -1,10 +1,5 @@
 require "sentinelli/version"
 
-module Sentinelli
-
-
-  class Error < StandardError; end
-  # Your code goes here...
 
   class SentinelliReport
 
@@ -28,4 +23,3 @@ module Sentinelli
       puts 'Theres a problem with the connection.... retry later.'
     end
   end
-end
