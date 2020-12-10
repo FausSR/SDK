@@ -6,7 +6,7 @@ require 'rest-client'
 
     def self.new(org_key)
       @organization_key = org_key
-      @url = 'https://localhost:3000/'
+      @url = 'http://localhost:3000/'
     end
 
     def self.set_key(org_key)
