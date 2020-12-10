@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sentinelli (0.2.3)
+    sentinelli (0.3.0)
       rest-client
 
 GEM

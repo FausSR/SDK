@@ -1,6 +1,7 @@
 require "sentinelli/version"
 require 'rest-client'
 
+module Sentinelli
 
   class SentinelliReport
 
@@ -18,9 +19,29 @@ require 'rest-client'
         url = @url + 'registeredError'
         response = RestClient.post url, error_data,
                                   'access_key': @organization_key
-        puts response.body
+        json_response = JSON.parse(response.body)
+
+        if(json_response["status"] == 200)
+            puts json_response["message"]
+        else
+            raise SentinelliReportException.new(json_response["message"])
+        end
+      rescue RestClient::ExceptionWithResponse => err
+        raise SentinelliReportException.new(err.message)
       end
     rescue Timeout::Error
-      puts 'Theres a problem with the connection.... retry later.'
+      raise SentinelliReportException.new("There was a problem connecting to the API")
     end
   end
+
+  private
+
+  class SentinelliReportException < StandardError
+    def initialize(data)
+      @data = data
+    end
+  end
+
+
+  
+end
