@@ -40,8 +40,11 @@ module Sentinelli
     def initialize(data)
       @data = data
     end
+    def self.message
+      @data
+    end
   end
 
 
-  
+
 end
