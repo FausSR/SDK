@@ -6,7 +6,7 @@ module Sentinelli
   class Error < StandardError; end
   # Your code goes here...
 
-  class Sentinelli
+  class SentinelliReport
 
     def self.new(org_key)
       @organization_key = org_key
