@@ -37,11 +37,8 @@ module Sentinelli
   private
 
   class SentinelliReportException < StandardError
-    def initialize(data)
-      @data = data
-    end
-    def self.message
-      @data
+    def initialize(msg)
+      super(msg)
     end
   end
 
